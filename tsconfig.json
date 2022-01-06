@@ -1,26 +1,109 @@
 {
+  /* Visit https://aka.ms/tsconfig.json to read more about this file */
+  "compileOnSave": true,
+  "include": ["src"],
+  "exclude": [
+    "**/node_modules",
+    "**/.*",
+    "**/build",
+    "**/docs",
+    "**/lib",
+    "**/dist",
+    "**/reports"
+  ],
   "compilerOptions": {
+    /* Projects */
+    "incremental": true,
+    // "composite": true,
+    // "tsBuildInfoFile": "./",
+    // "disableSourceOfProjectReferenceRedirect": true,
+    // "disableSolutionSearching": true,
+    // "disableReferencedProjectLoad": true,
+    "disableSizeLimit": true,
+
+    /* Language and Environment */
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // "jsxFactory": "",
+    // "jsxFragmentFactory": "",
+    // "jsxImportSource": "react-jsx",
+    // "reactNamespace": "",
+    // "noLib": true,
+    "useDefineForClassFields": true,
+
+    /* Modules */
     "module": "esnext",
+    // "rootDir": "./",
     "moduleResolution": "node",
+    "baseUrl": "./",
+    // "rootDirs": [],
+    "typeRoots": ["node_modules/@types", "node_modules/@testing-library"],
+    "types": ["node", "jest", "react", "react-dom"],
+    // "allowUmdGlobalAccess": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    // "noResolve": true,
+
+    /* JavaScript Support */
+    "allowJs": true,
+    // "checkJs": true,
+    // "maxNodeModuleJsDepth": 1,
+
+    /* Emit */
+    // "declaration": true,
+    // "declarationMap": true,
+    // "emitDeclarationOnly": true,
+    "sourceMap": true,
+    // "outFile": "./",
+    "outDir": "./dist",
+    "removeComments": true,
     "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": [
-    "src"
-  ]
+    "importHelpers": true,
+    // "importsNotUsedAsValues": "remove",
+    "downlevelIteration": true,
+    // "sourceRoot": "",
+    // "mapRoot": "",
+    "inlineSources": true,
+    // "emitBOM": true,
+    "newLine": "lf",
+    // "stripInternal": true,
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    // "preserveConstEnums": true,
+    // "declarationDir": "./",
+    // "preserveValueImports": true,
+
+    /* Interop Constraints */
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "preserveSymlinks": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    // "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    // "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    // "allowUnusedLabels": true,
+    // "allowUnreachableCode": true,
+
+    /* Completeness */
+    "skipLibCheck": true
+  }
 }
