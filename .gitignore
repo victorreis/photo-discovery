@@ -19,7 +19,6 @@ reports
 # IDE - VSCode
 .history/*
 
-
 # compiled output
 dist
 lib
