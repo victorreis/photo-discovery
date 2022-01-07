@@ -1,0 +1,4 @@
+{
+  "*.{ts,tsx}": ["yarn lint", "bash -c 'yarn type-check'"],
+  "*.{js,jsx,ts,tsx,css,scss,sass,md,html,json}": "yarn format"
+}
