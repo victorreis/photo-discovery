@@ -167,6 +167,7 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
+    'react/jsx-max-depth': [2, { max: 3 }],
     'react/jsx-no-literals': 0,
     'react/prop-types': 0,
     'react/self-closing-comp': [

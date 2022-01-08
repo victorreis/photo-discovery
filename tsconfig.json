@@ -40,11 +40,22 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     // "rootDirs": [],
-    "typeRoots": ["node_modules/@types", "node_modules/@testing-library"],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/@testing-library",
+      "src/@types"
+    ],
     "types": ["node", "jest", "react", "react-dom"],
     // "allowUmdGlobalAccess": true,
     "resolveJsonModule": true,
     // "noResolve": true,
+    "plugins": [
+      {
+        "transform": "typescript-plugin-styled-components",
+        "type": "config",
+        "minify": true
+      }
+    ],
 
     /* JavaScript Support */
     "allowJs": true,

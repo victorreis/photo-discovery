@@ -11,5 +11,13 @@ module.exports = {
         regenerator: true,
       },
     ],
+    [
+      'babel-plugin-styled-components',
+      {
+        namespace: 'photo-discovery',
+        displayName: true,
+        fileName: false,
+      },
+    ],
   ],
 };

@@ -11,7 +11,7 @@
     "dbaeumer.vscode-eslint",
     "donjayamanne.githistory",
     "dotjoshjohnson.xml",
-    "DSKWRK.vscode-generate-getter-setter",
+    "dskwrk.vscode-generate-getter-setter",
     "dsznajder.es7-react-js-snippets",
     "eamodio.gitlens",
     "editorconfig.editorconfig",
@@ -47,6 +47,8 @@
     "visualstudioexptteam.vscodeintellicode",
     "wayou.vscode-todo-highlight",
     "wix.vscode-import-cost",
-    "xabikos.javascriptsnippets"
+    "xabikos.javascriptsnippets",
+    "stylelint.vscode-stylelint",
+    "styled-components.vscode-styled-components"
   ]
 }
