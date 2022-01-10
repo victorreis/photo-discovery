@@ -30,7 +30,7 @@ export interface Default{{ inputs.value | pascal }}Props {
 }
 
 export interface Optional{{ inputs.value | pascal }}Props {
-  style?: CSSStyleDeclaration;
+  style?: React.CSSProperties;
 }
 
 export type {{ inputs.value | pascal }}Props = Required{{ inputs.value | pascal }}Props &

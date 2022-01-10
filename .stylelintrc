@@ -5,5 +5,8 @@
     "stylelint-config-prettier",
     "stylelint-config-styled-components"
   ],
-  "ignoreFiles": ["**/*.d.ts"]
+  "ignoreFiles": ["**/*.d.ts"],
+  "rules": {
+    "property-no-vendor-prefix": 0
+  }
 }

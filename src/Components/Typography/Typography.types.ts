@@ -2,7 +2,7 @@ import { TestProps } from '../../Config/Tests/Test.types';
 import { TypographyVariant } from '../../Theme/Types/Typographies.types';
 
 export interface RequiredTypographyProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export interface DefaultTypographyProps {
@@ -10,7 +10,7 @@ export interface DefaultTypographyProps {
 }
 
 export interface OptionalTypographyProps {
-  style?: CSSStyleDeclaration;
+  style?: React.CSSProperties;
 }
 
 export type TypographyProps = RequiredTypographyProps &
