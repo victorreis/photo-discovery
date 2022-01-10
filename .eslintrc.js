@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
     jest: true,
+    'jest/globals': true,
   },
   globals: {
     context: true,
@@ -63,16 +64,22 @@ module.exports = {
     ],
     formComponents: ['CustomForm', { name: 'Form', formAttribute: 'endpoint' }],
     linkComponents: ['Hyperlink', { name: 'Link', linkAttribute: 'to' }],
+    jest: {
+      version: 27,
+    },
   },
   extends: [
-    'react-app',
-    'react-app/jest',
     'airbnb',
     'airbnb/hooks',
     'airbnb-typescript',
     'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'plugin:jsx-a11y/recommended',
     'plugin:markdown/recommended',
     'plugin:prettier/recommended',
@@ -80,9 +87,8 @@ module.exports = {
     'plugin:react/all',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'react-app',
+    'react-app/jest',
   ],
   plugins: [
     'import',
@@ -93,6 +99,7 @@ module.exports = {
     'react',
     'react-hooks',
     '@typescript-eslint',
+    'jest',
   ],
   rules: {
     '@typescript-eslint/explicit-member-accessibility': 0,
@@ -103,6 +110,9 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [2, { varsIgnorePattern: 'React' }],
     'comma-dangle': 0,
     '@typescript-eslint/comma-dangle': 0,
+    'no-use-before-define': 0,
+    '@typescript-eslint/no-use-before-define': 2,
+
     curly: 2,
     'import/order': 0,
     'import/prefer-default-export': 0,
@@ -118,6 +128,11 @@ module.exports = {
         groups: ['/^react/', 'module', ['parent', 'sibling', 'index']],
       },
     ],
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
     'no-alert': 2,
     'no-console': [
       2,
@@ -141,8 +156,6 @@ module.exports = {
     ],
     'no-undef': 2,
     'no-unused-vars': 2,
-    'no-use-before-define': 0,
-    '@typescript-eslint/no-use-before-define': 2,
     'prefer-template': 2,
     'prettier/prettier': [
       'error',
@@ -180,4 +193,12 @@ module.exports = {
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
   },
+  overrides: [
+    {
+      files: ['src/**/*.test.tsx'],
+      rules: {
+        'testing-library/await-async-query': 0,
+      },
+    },
+  ],
 };

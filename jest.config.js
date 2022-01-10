@@ -1,9 +1,8 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+const { defaults } = require('jest-config');
 
 module.exports = {
+  ...defaults,
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -29,10 +28,10 @@ module.exports = {
   coveragePathIgnorePatterns: ['/node_modules/'],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: 'babel',
+  // coverageProvider: 'babel',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['json', 'text', 'lcov', 'clover'],
+  // coverageReporters: ['json', 'text', 'lcov', 'clover'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -62,7 +61,7 @@ module.exports = {
   // moduleDirectories: ['<rootDir>/node_modules', '<rootDir>/src'],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+  // moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
@@ -108,13 +107,13 @@ module.exports = {
   roots: ['<rootDir>/src'],
 
   // Allows you to use a custom runner instead of Jest's default test runner
-  runner: 'jest-runner',
+  // runner: 'jest-runner',
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  // setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -140,7 +139,7 @@ module.exports = {
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
 
   // This option allows the use of a custom results processor
   // testResultsProcessor: undefined,
