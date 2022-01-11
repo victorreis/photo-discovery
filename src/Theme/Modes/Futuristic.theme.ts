@@ -3,7 +3,8 @@ import { lightTheme } from './Light.theme';
 
 export const futuristicTheme: CustomThemeType = {
   ...lightTheme,
-  mode: 'futuristic',
+  //! to be changed
+  mode: 'dark',
 
   colors: {
     ...lightTheme.colors,
@@ -12,7 +13,7 @@ export const futuristicTheme: CustomThemeType = {
       primary: {
         lightest: '#e8e8ee',
         lighter: '#a5a3bb',
-        light: '#615d89',
+        light: '#4a4678',
         normal: '#1d1856',
         dark: '#171345',
         darker: '#110e34',
@@ -47,24 +48,40 @@ export const futuristicTheme: CustomThemeType = {
       },
     },
     background: {
-      default: '#e8e8ee',
-      highContrast: '#09071a',
+      default: {
+        lightest: '#09071a',
+        lighter: '#110e34',
+        light: '#171345',
+        normal: '#1d1856',
+        dark: '#4a4678',
+        darker: '#a5a3bb',
+        darkest: '#e8e8ee',
+      },
+      highContrast: {
+        lightest: '#e8e8ee',
+        lighter: '#a5a3bb',
+        light: '#4a4678',
+        normal: '#1d1856',
+        dark: '#171345',
+        darker: '#110e34',
+        darkest: '#09071a',
+      },
     },
     font: {
       primary: '#110e34',
       secondary: '#740083',
       detail: '#003e45',
       effect: '#74003a',
-      error: '#333',
-      warning: '#333',
-      info: '#333',
-      success: '#333',
-      white: '#fff',
-      black: '#000',
-      default: '#333',
+      error: '#333333',
+      warning: '#333333',
+      info: '#333333',
+      success: '#333333',
+      white: '#ffffff',
+      black: '#000000',
+      default: '#333333',
       caption: '#555',
-      hint: '#777',
-      disabled: '#aaa',
+      hint: '#777777',
+      disabled: '#aaaaaa',
     },
   },
 };

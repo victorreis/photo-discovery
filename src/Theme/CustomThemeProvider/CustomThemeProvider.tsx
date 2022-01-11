@@ -2,23 +2,16 @@ import React, { useMemo, useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import {
-  lightTheme,
-  darkTheme,
-  futuristicTheme,
-  deepSpaceTheme,
-} from '../Modes';
-import { Mode, CustomThemeType } from '../Types';
+import { darkTheme, deepSpaceTheme } from '../Modes';
+import { ThemeMode, CustomThemeType } from '../Types';
 import {
   ThemeContextType,
   CustomThemeProviderProps,
 } from './CustomThemeProvider.types';
 
-export const themes: Record<Mode | 'default', CustomThemeType> = {
+export const themes: Record<ThemeMode | 'default', CustomThemeType> = {
   default: deepSpaceTheme,
-  light: lightTheme,
   dark: darkTheme,
-  futuristic: futuristicTheme,
   deepSpace: deepSpaceTheme,
 };
 
@@ -42,7 +35,7 @@ export const CustomThemeProvider: React.FC<CustomThemeProviderProps> = (
 
   const [theme, setTheme] = useState<CustomThemeType>(themes[themeName]);
 
-  const switchTheme = (themeMode: Mode): void => {
+  const switchTheme = (themeMode: ThemeMode): void => {
     setTheme(themes[themeMode]);
   };
 

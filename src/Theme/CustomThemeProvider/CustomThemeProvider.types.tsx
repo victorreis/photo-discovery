@@ -1,8 +1,11 @@
-import { CustomThemeType, Mode } from '../Types';
+import { CustomThemeType, ThemeMode } from '../Types';
 
 export type ThemeContextType = {
   theme: CustomThemeType;
-  switchTheme: (themeMode: Mode) => void;
+  switchTheme: (themeMode: ThemeMode) => void;
 };
 
-export type CustomThemeProviderProps = { testID?: string; themeName?: Mode };
+export type CustomThemeProviderProps = {
+  testID?: string;
+  themeName?: ThemeMode;
+};
