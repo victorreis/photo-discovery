@@ -87,7 +87,6 @@ module.exports = {
     'plugin:react/all',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'react-app',
     'react-app/jest',
   ],
   plugins: [

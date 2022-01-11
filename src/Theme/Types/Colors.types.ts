@@ -44,7 +44,10 @@ export type CommonColors = Record<CommonColor, string>;
 
 const availableBackgroundColors = ['default', 'highContrast'] as const;
 export type BackgroundColor = typeof availableBackgroundColors[number];
-export type BackgroundColors = Record<BackgroundColor, string>;
+export type BackgroundColors = {
+  default: ColorIntensities;
+  highContrast: ColorIntensities;
+};
 
 const availableFontColors = [
   ...availableMainColors,

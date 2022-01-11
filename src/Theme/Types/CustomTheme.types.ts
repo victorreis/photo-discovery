@@ -2,11 +2,11 @@ import { Borders } from './Borders.types';
 import { Colors } from './Colors.types';
 import { Typographies } from './Typographies.types';
 
-const availableModes = ['light', 'dark', 'futuristic', 'deepSpace'] as const;
-export type Mode = typeof availableModes[number];
+export const availableThemeModes = ['dark', 'deepSpace'] as const;
+export type ThemeMode = typeof availableThemeModes[number];
 
 export interface CustomThemeType {
-  mode: Mode;
+  mode: ThemeMode;
   colors: Colors;
   borders: Borders;
   typographies: Typographies;

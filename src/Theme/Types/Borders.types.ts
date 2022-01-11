@@ -7,7 +7,7 @@ export type BorderWidth = typeof availableBorderWidths[number];
 export type BorderWidths = Record<BorderWidth, number>;
 
 export const availableBorderRadiuses: ReadonlyArray<
-  Extract<Size, 'SM' | 'MD' | 'LG'> | 'pill' | 'rounded'
+  Extract<Size, 'SM' | 'MD' | 'LG' | 'XL'> | 'pill' | 'rounded'
 > = ['SM', 'MD', 'LG', 'pill', 'rounded'] as const;
 export type BorderRadius = typeof availableBorderRadiuses[number];
 export type BorderRadiuses = Record<
