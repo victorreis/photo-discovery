@@ -1,4 +1,5 @@
 import {
+  fireEvent,
   renderJestDomCreator,
   renderRTRCreator,
   screen,
@@ -10,10 +11,11 @@ import { RequiredButtonProps, ButtonProps } from './Button.types';
 
 describe(`Button component tests`, () => {
   const text = 'text';
+  const onClick = jest.fn();
 
   const requiredProps: RequiredButtonProps = {
     children: text,
-    onClick: jest.fn(),
+    onClick,
   };
 
   const setup = (props?: ButtonProps) => {
@@ -44,6 +46,14 @@ describe(`Button component tests`, () => {
       const element = screen.getByText(text);
 
       expect(element).toBeInTheDocument();
+    });
+
+    it(`should call the onCLick callback when the button is clicked`, () => {
+      setup().renderJestDom();
+      const testInstance = screen.getByTestId(buttonDefaults.testID);
+
+      fireEvent.click(testInstance);
+      expect(onClick).toHaveBeenCalled();
     });
   });
 

@@ -1,4 +1,5 @@
 import {
+  fireEvent,
   renderJestDomCreator,
   renderRTRCreator,
   screen,
@@ -37,6 +38,14 @@ describe(`CloseButton component tests`, () => {
       const testInstance = screen.getByTestId(closeButtonDefaults.testID);
 
       expect(testInstance).toBeTruthy();
+    });
+
+    it(`should call the onCLick callback when the button is clicked`, () => {
+      setup().renderJestDom();
+      const testInstance = screen.getByTestId(closeButtonDefaults.testID);
+
+      fireEvent.click(testInstance);
+      expect(onClick).toHaveBeenCalled();
     });
   });
 
