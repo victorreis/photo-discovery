@@ -22,7 +22,7 @@ import { TestProps } from '../../Config/Tests/Test.types';
 import { TypographyVariant } from '../../Theme/Types/Typographies.types';
 
 export interface Required{{ inputs.value | pascal }}Props {
-  children: string;
+  children: React.ReactNode;;
 }
 
 export interface Default{{ inputs.value | pascal }}Props {
