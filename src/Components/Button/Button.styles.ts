@@ -4,6 +4,7 @@ import { toPx } from '../../Utils/Transform';
 import { ButtonStyleProps } from './Button.types';
 
 export const ButtonContainer = styled.button<ButtonStyleProps>`
+  cursor: pointer;
   height: 3rem;
   margin: 0.5rem;
   border: 0;

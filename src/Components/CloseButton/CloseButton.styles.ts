@@ -4,6 +4,7 @@ import { CloseButtonStyleProps } from './CloseButton.types';
 
 // The icon library does not pass the onClick to the SVG component, so I need to create thes transparent container.
 export const TransparentContainer = styled.div`
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,6 +14,7 @@ export const TransparentContainer = styled.div`
 `;
 
 export const CloseButtonContainer = styled.button<CloseButtonStyleProps>`
+  cursor: pointer;
   background-color: transparent;
   width: 2.5rem;
   height: 2.5rem;

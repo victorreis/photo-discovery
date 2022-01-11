@@ -2,7 +2,7 @@
 
 exports[`CloseButton component tests snapshot tests should render correctly 1`] = `
 <button
-  className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 cLNGvh"
+  className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 jIqCYZ"
   data-testid="CloseButton"
   onClick={[MockFunction]}
 >
@@ -31,7 +31,7 @@ exports[`CloseButton component tests snapshot tests should render correctly 1`] 
     />
   </svg>
   <div
-    className="TransparentContainer-photo-discovery__sc-khdkyf-0 kGsiOR"
+    className="TransparentContainer-photo-discovery__sc-khdkyf-0 kjHOyB"
   />
 </button>
 `;
