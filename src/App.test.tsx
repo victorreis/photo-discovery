@@ -29,7 +29,7 @@ describe('App component tests', () => {
       const container = screen.getByTestId('container');
 
       expect(container).toHaveStyle({
-        backgroundColor: themes.default.colors.background.default,
+        backgroundColor: themes.default.colors.background.default.darkest,
         width: '100vw',
         height: '100vh',
         overflow: 'hidden',
