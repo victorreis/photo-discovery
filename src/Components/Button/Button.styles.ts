@@ -11,6 +11,9 @@ export const ButtonContainer = styled.button<ButtonStyleProps>`
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   align-items: center;
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.colors.main.effect.normal}55;
+  border-style: solid;
 
   ${({ theme }) => theme.typographies.button};
   background-color: ${({ theme }) => theme.colors.background.default.darkest};
@@ -20,7 +23,8 @@ export const ButtonContainer = styled.button<ButtonStyleProps>`
   box-shadow: inset 0 0 1em ${({ theme }) => theme.colors.main.effect.normal}55;
 
   &:hover {
-    box-shadow: inset 0 0 1em ${({ theme }) => theme.colors.main.effect.dark},
-      0 0 0.2em ${({ theme }) => theme.colors.main.effect.dark};
+    box-shadow: inset 0 0 1em ${({ theme }) => theme.colors.main.effect.light},
+      0 0 0.2em ${({ theme }) => theme.colors.main.effect.light};
+    background-color: ${({ theme }) => theme.colors.background.default.darker};
   }
 `;
