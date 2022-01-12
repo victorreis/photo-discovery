@@ -14,6 +14,7 @@ export const Typography: React.FC<TypographyProps> = (props): JSX.Element => {
     testID = typographyDefaults.testID,
     children,
     variant = typographyDefaults.variant,
+    style,
     ...others
   } = props;
 
@@ -21,6 +22,7 @@ export const Typography: React.FC<TypographyProps> = (props): JSX.Element => {
     <TypographyContainer
       as={typographyVariantToTag[variant]}
       data-testid={testID}
+      style={style}
       variant={variant}
       {...others}
     >

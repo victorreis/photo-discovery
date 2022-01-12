@@ -22,14 +22,24 @@ import { TestProps } from '../../Config/Tests/Test.types';
 import { TypographyVariant } from '../../Theme/Types/Typographies.types';
 
 export interface Required{{ inputs.value | pascal }}Props {
-  children: React.ReactNode;;
+  /**
+   * Component's children.
+   */
+  children: React.ReactNode;
 }
 
 export interface Default{{ inputs.value | pascal }}Props {
+  /**
+   * Sets the component variant. It changes the HTML tag and the styles.
+   * @default 'body1'.
+   */
   variant?: TypographyVariant;
 }
 
 export interface Optional{{ inputs.value | pascal }}Props {
+  /**
+   * Sets the component styles.
+   */
   style?: React.CSSProperties;
 }
 
@@ -69,6 +79,7 @@ export const {{ inputs.value | pascal }}: React.FC<{{ inputs.value | pascal }}Pr
     <{{ inputs.value | pascal }}Container
       as={typographyVariantToTag[variant]}
       data-testid={testID}
+      style={style}
       variant={variant}
       {...others}
     >

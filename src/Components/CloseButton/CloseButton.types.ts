@@ -1,6 +1,9 @@
 import { TestProps } from '../../Config/Tests/Test.types';
 
 export interface RequiredCloseButtonProps {
+  /**
+   * Callback function that is called when the componentis clicked.
+   */
   onClick: () => void;
 }
 
