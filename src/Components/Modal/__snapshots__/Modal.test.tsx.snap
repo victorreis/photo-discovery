@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component tests snapshot tests should render correctly 1`] = `
+<div
+  className="ModalContainer-photo-discovery__sc-1x2la9l-0 kZrEh"
+  data-testid="Modal"
+>
+  <div
+    className="ModalContentContainer-photo-discovery__sc-1x2la9l-2 TDQOo"
+    data-testid="Modal_ModalContentContainer"
+  >
+    <button
+      className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 jIqCYZ"
+      data-testid="CloseButton"
+      onClick={[Function]}
+    >
+      <svg
+        color="#e8e8ee"
+        fill="currentColor"
+        height="1.67rem"
+        onClick={[Function]}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "#e8e8ee",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1.67rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+        />
+      </svg>
+      <div
+        className="TransparentContainer-photo-discovery__sc-khdkyf-0 kjHOyB"
+      />
+    </button>
+    text
+  </div>
+  <div
+    className="ModalBackdropContainer-photo-discovery__sc-1x2la9l-1 jfROMc"
+    data-testid="Modal_ModalBackdropContainer"
+    onClick={[Function]}
+  />
+</div>
+`;
