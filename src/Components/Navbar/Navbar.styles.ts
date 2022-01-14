@@ -20,7 +20,7 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   flex: 1;
 
-  @media only screen and (max-width: ${screenBreakpoints.xs}px) {
+  @media only screen and (max-width: ${screenBreakpoints.sm}px) {
     height: ${heightByScreenSize.xs};
   }
 `;
@@ -43,7 +43,7 @@ export const Logo = styled(Typography)`
     font-size: 2.2rem;
   }
 
-  @media only screen and (max-width: ${screenBreakpoints.xs}px) {
+  @media only screen and (max-width: ${screenBreakpoints.sm}px) {
     display: flex;
     flex-direction: column;
     height: ${heightByScreenSize.xs};

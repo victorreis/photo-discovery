@@ -1,14 +1,18 @@
 import {
+  fireEvent,
   renderJestDomCreator,
   renderRTRCreator,
   screen,
 } from '../../Config/Tests/GlobalSetup.config';
+import { modalDefaults } from '../Modal/Modal';
 import { Navbar, navbarDefaults } from './Navbar';
 import { heightByScreenSize } from './Navbar.styles';
 import { RequiredNavbarProps, NavbarProps } from './Navbar.types';
 
 describe(`Navbar component tests`, () => {
   const text = 'text';
+  const themeSwitcherIconId = `${navbarDefaults.testID}_ThemeSwitcherIcon`;
+  const modalBackdropId = `${modalDefaults.testID}_ModalBackdropContainer`;
 
   const requiredProps: RequiredNavbarProps = {
     children: text,
@@ -36,6 +40,29 @@ describe(`Navbar component tests`, () => {
 
       expect(testInstance).toBeTruthy();
     });
+
+    it(`should open the modal when the '${themeSwitcherIconId}' is clicked`, () => {
+      setup().renderJestDom();
+      const themeSwitcherIcon = screen.getByTestId(themeSwitcherIconId);
+
+      fireEvent.click(themeSwitcherIcon);
+      const modal = screen.getByTestId(modalDefaults.testID);
+
+      expect(modal).toBeInTheDocument();
+    });
+
+    it(`should close the modal when the '${themeSwitcherIconId}' is clicked and then the '${modalBackdropId}' is clicked`, () => {
+      setup().renderJestDom();
+      const themeSwitcherIcon = screen.getByTestId(themeSwitcherIconId);
+
+      fireEvent.click(themeSwitcherIcon);
+      const modal = screen.getByTestId(modalDefaults.testID);
+      const modalBackdrop = screen.getByTestId(modalBackdropId);
+      expect(modal).toBeInTheDocument();
+
+      fireEvent.click(modalBackdrop);
+      expect(modal).not.toBeInTheDocument();
+    });
   });
 
   describe(`style tests`, () => {
@@ -47,26 +74,6 @@ describe(`Navbar component tests`, () => {
         height: heightByScreenSize.others,
       });
     });
-
-    // eslint-disable-next-line jest/no-commented-out-tests
-    // it(`should have height equals '${heightByScreenSize.xs}' when the screen is small`, () => {
-    //   setup().renderJestDom();
-    //   const container = screen.getByTestId(navbarDefaults.testID);
-
-    //   Object.defineProperty(window, 'innerWidth', {
-    //     writable: true,
-    //     configurable: true,
-    //     value: 150,
-    //   });
-
-    //   window.dispatchEvent(new Event('resize'));
-
-    //   expect(window.innerWidth).toBe(150);
-
-    //   expect(container).toHaveStyle({
-    //     height: heightByScreenSize.xs,
-    //   });
-    // });
   });
 
   describe(`snapshot tests`, () => {
