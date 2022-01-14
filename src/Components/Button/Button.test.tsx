@@ -11,6 +11,7 @@ import { RequiredButtonProps, ButtonProps } from './Button.types';
 
 describe(`Button component tests`, () => {
   const text = 'text';
+  const newType = 'submit';
   const onClick = jest.fn();
 
   const requiredProps: RequiredButtonProps = {
@@ -54,6 +55,25 @@ describe(`Button component tests`, () => {
 
       fireEvent.click(testInstance);
       expect(onClick).toHaveBeenCalled();
+    });
+
+    it(`should render '${buttonDefaults.type}' as the default type`, () => {
+      const instance = setup().renderRTR().root;
+      const element = instance.findByProps({
+        type: buttonDefaults.type,
+      });
+
+      expect(element).toBeTruthy();
+    });
+
+    it(`should override the default type when it is passed as prop`, () => {
+      const instance = setup({
+        ...requiredProps,
+        type: newType,
+      }).renderRTR().root;
+      const element = instance.findByProps({ type: newType });
+
+      expect(element).toBeTruthy();
     });
   });
 
