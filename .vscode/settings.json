@@ -20,6 +20,7 @@
   "eslint.workingDirectories": ["../packages/**/*"],
   "files.autoSave": "off",
   "files.encoding": "utf8",
+  "files.eol": "\n",
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": true,

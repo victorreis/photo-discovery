@@ -106,6 +106,8 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-empty-interface': 0,
     '@typescript-eslint/no-extraneous-class': 0,
+    '@typescript-eslint/no-floating-promises': 0,
+    '@typescript-eslint/no-misused-promises': 0,
     'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': [2, { varsIgnorePattern: 'React' }],
     'comma-dangle': 0,
@@ -180,10 +182,11 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
-    'react/jsx-props-no-spreading': 0,
     'react/jsx-max-depth': [2, { max: 3 }],
     'react/jsx-newline': 0,
     'react/jsx-no-literals': 0,
+    'react/jsx-one-expression-per-line': 0,
+    'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0,
     'react/self-closing-comp': [
       2,
@@ -196,6 +199,12 @@ module.exports = {
     'react-hooks/rules-of-hooks': 2,
   },
   overrides: [
+    {
+      files: ['*.ts', '*.tsx'], // Your TypeScript files extension
+      parserOptions: {
+        project: ['./tsconfig.json'], // Specify it only for TypeScript files
+      },
+    },
     {
       files: ['src/**/*.test.tsx'],
       rules: {
