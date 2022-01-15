@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput component tests snapshot tests should render correctly 1`] = `
+<input
+  className="Input-photo-discovery__sc-oh0frq-0 rjMbH"
+  data-testid="TextInput"
+  onChange={[Function]}
+  type="text"
+  value="text"
+/>
+`;
