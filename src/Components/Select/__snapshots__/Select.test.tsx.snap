@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component tests snapshot tests should render correctly 1`] = `
+<select
+  className="SelectContainer-photo-discovery__sc-i3jpgt-0 kDA-Dcf"
+  data-testid="Select"
+  onChange={[Function]}
+  title="undefined"
+>
+  <option
+    defaultValue=""
+    hidden={true}
+    value=""
+  >
+    Select an option
+  </option>
+  <option />
+  <option
+    title="test1"
+    value={1}
+  >
+    test1
+  </option>
+  <option
+    title="test2"
+    value={2}
+  >
+    test2
+  </option>
+  <option
+    title="test3"
+    value={3}
+  >
+    test3
+  </option>
+</select>
+`;
