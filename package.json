@@ -79,6 +79,7 @@
     "jest-svg-transformer": "^1.0.0",
     "jest-transform-stub": "^2.0.0",
     "lint-staged": "^12.1.6",
+    "msw": "^0.36.4",
     "node-notifier": "^10.0.0",
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
@@ -95,6 +96,7 @@
   },
   "dependencies": {
     "@types/react-icons": "^3.0.0",
+    "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",

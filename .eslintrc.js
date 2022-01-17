@@ -130,6 +130,7 @@ module.exports = {
         groups: ['/^react/', 'module', ['parent', 'sibling', 'index']],
       },
     ],
+    'jest/no-conditional-expect': 0,
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
@@ -197,6 +198,8 @@ module.exports = {
     ],
     'react-hooks/exhaustive-deps': 2,
     'react-hooks/rules-of-hooks': 2,
+    'testing-library/await-async-query': 0,
+    'testing-library/no-await-sync-query': 0,
   },
   overrides: [
     {
@@ -206,9 +209,9 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/*.test.tsx'],
+      files: ['src/**/*.test.tsx', 'src/**/*.test.ts', 'src/**/*.config.tsx'],
       rules: {
-        'testing-library/await-async-query': 0,
+        'import/no-extraneous-dependencies': 0,
       },
     },
   ],
