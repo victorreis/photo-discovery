@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { create } from 'react-test-renderer';
 
