@@ -10,7 +10,7 @@ import {
 } from './CustomThemeProvider.types';
 
 export const themes: Record<ThemeMode | 'default', CustomThemeType> = {
-  default: deepSpaceTheme,
+  default: darkTheme,
   dark: darkTheme,
   deepSpace: deepSpaceTheme,
 };
@@ -21,7 +21,7 @@ export const ThemeContext = React.createContext<
 
 export const customThemeProviderDefaults: Required<CustomThemeProviderProps> = {
   testID: 'ThemeContextProvider',
-  themeName: 'deepSpace',
+  themeName: 'dark',
 };
 
 export const CustomThemeProvider: React.FC<CustomThemeProviderProps> = (
