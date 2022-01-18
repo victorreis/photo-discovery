@@ -2,7 +2,7 @@
 
 exports[`Select component tests snapshot tests should render correctly 1`] = `
 <select
-  className="SelectContainer-photo-discovery__sc-i3jpgt-0 kDA-Dcf"
+  className="SelectContainer-photo-discovery__sc-i3jpgt-0 iMvynY"
   data-testid="Select"
   onChange={[Function]}
   title="undefined"

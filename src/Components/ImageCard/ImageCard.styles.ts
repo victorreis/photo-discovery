@@ -5,12 +5,17 @@ import { Typography } from '../Typography';
 import { ImageCardStyleProps } from './ImageCard.types';
 
 export const ImageCardContainer = styled.div<ImageCardStyleProps>`
-  background-color: ${({ theme }) => theme.colors.background.default.darker};
+  background-color: ${({ theme }) => theme.colors.background.default.normal};
   width: 10rem;
-  border-radius: ${({ theme }) => toPx(theme.borders.radius.MD)};
+  border-radius: ${({ theme }) => toPx(theme.borders.radius.LG)};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 0.25em ${({ theme }) => theme.colors.main.effect.normal};
+
+  &:hover {
+    box-shadow: 0 0 0.75em ${({ theme }) => theme.colors.main.effect.normal};
+  }
 `;
 
 export const Thumbnail = styled.img`
@@ -19,6 +24,7 @@ export const Thumbnail = styled.img`
   box-sizing: border-box;
   border-top-left-radius: ${({ theme }) => toPx(theme.borders.radius.LG)};
   border-top-right-radius: ${({ theme }) => toPx(theme.borders.radius.LG)};
+  cursor: pointer;
 `;
 
 export const CardTitle = styled(Typography)`

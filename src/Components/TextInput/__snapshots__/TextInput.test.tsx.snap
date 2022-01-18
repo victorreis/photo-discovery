@@ -2,7 +2,7 @@
 
 exports[`TextInput component tests snapshot tests should render correctly 1`] = `
 <input
-  className="Input-photo-discovery__sc-oh0frq-0 rjMbH"
+  className="Input-photo-discovery__sc-oh0frq-0 egkOIw"
   data-testid="TextInput"
   onChange={[Function]}
   type="text"

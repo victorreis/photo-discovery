@@ -16,7 +16,7 @@ export const ModalContainer = styled.div`
 
 export const ModalBackdropContainer = styled.div`
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,9 +34,9 @@ export const ModalContentContainer = styled.div`
   flex-direction: column;
   z-index: 10;
   box-sizing: border-box;
+  position: fixed;
 
   @media only screen and (max-width: ${screenBreakpoints.sm}px) {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;

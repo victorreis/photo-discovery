@@ -2,7 +2,7 @@
 
 exports[`Button component tests snapshot tests should render correctly 1`] = `
 <button
-  className="ButtonContainer-photo-discovery__sc-17i16aw-0 bWEbGw"
+  className="ButtonContainer-photo-discovery__sc-17i16aw-0 hEpMtu"
   data-testid="Button"
   onClick={[Function]}
   type="button"

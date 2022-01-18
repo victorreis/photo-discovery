@@ -6,7 +6,7 @@ exports[`Navbar component tests snapshot tests should render correctly 1`] = `
   data-testid="Navbar"
 >
   <h3
-    className="TypographyContainer-photo-discovery__sc-1t3hmm1-0 gHcSmf Logo-photo-discovery__sc-9em23l-1 gfsojJ"
+    className="TypographyContainer-photo-discovery__sc-1t3hmm1-0 gHcSmf Logo-photo-discovery__sc-9em23l-1 cSizAu"
     data-testid="Typography"
   >
     <span>
@@ -28,7 +28,7 @@ exports[`Navbar component tests snapshot tests should render correctly 1`] = `
   </h3>
   <svg
     data-testid="Navbar_ThemeSwitcherIcon"
-    fill="#80e7f2"
+    fill="#f480ba"
     height="1.67rem"
     onClick={[Function]}
     stroke="currentColor"

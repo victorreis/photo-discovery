@@ -58,8 +58,8 @@ describe(`ImageCard component tests`, () => {
       const container = screen.getByTestId(imageCardDefaults.testID);
 
       expect(container).toHaveStyle({
-        backgroundColor: themes.default.colors.background.default.darker,
-        borderRadius: toPx(themes.default.borders.radius.MD),
+        backgroundColor: themes.default.colors.background.default.normal,
+        borderRadius: toPx(themes.default.borders.radius.LG),
       });
     });
   });

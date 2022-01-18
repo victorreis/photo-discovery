@@ -6,11 +6,11 @@ exports[`Modal component tests snapshot tests should render correctly 1`] = `
   data-testid="Modal"
 >
   <div
-    className="ModalContentContainer-photo-discovery__sc-1x2la9l-2 TDQOo"
+    className="ModalContentContainer-photo-discovery__sc-1x2la9l-2 iljsDR"
     data-testid="Modal_ModalContentContainer"
   >
     <button
-      className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 jIqCYZ"
+      className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 dcJekt"
       data-testid="CloseButton"
       onClick={[Function]}
     >
@@ -45,7 +45,7 @@ exports[`Modal component tests snapshot tests should render correctly 1`] = `
     text
   </div>
   <div
-    className="ModalBackdropContainer-photo-discovery__sc-1x2la9l-1 jfROMc"
+    className="ModalBackdropContainer-photo-discovery__sc-1x2la9l-1 iejXpF"
     data-testid="Modal_ModalBackdropContainer"
     onClick={[Function]}
   />
