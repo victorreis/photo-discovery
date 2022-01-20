@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { nanoid } from 'nanoid';
+
 import { TestProps } from '../../Config/Tests/Test.types';
 import { Modal } from '../Modal';
 import {
@@ -22,6 +24,7 @@ export const ImageCard: React.FC<ImageCardProps> = (props): JSX.Element => {
     thumbnailUrl,
     imageUrl,
     title,
+    italicizedWord,
     ...others
   } = props;
 
@@ -31,10 +34,50 @@ export const ImageCard: React.FC<ImageCardProps> = (props): JSX.Element => {
     setOpen((prevState) => !prevState);
   };
 
+  const renderTitle = () => {
+    if (!italicizedWord) {
+      return title;
+    }
+
+    const wholeWordsToBeItalicized: Record<string, unknown> = {};
+    const splitedItalicizedWords = italicizedWord
+      .split(' ')
+      .map((word) => `\\w*${word}\\w*`)
+      .join('|');
+    const regex = new RegExp(`(${splitedItalicizedWords})`, 'gi');
+
+    let regexResult = regex.exec(title);
+    while (regexResult) {
+      const resultAt = regexResult.at(regexResult.length - 1);
+      if (resultAt) {
+        if (resultAt) {
+          wholeWordsToBeItalicized[resultAt] = true;
+        }
+      }
+      regexResult = regex.exec(title);
+    }
+
+    const finalTitle = title.split(' ').map((word) =>
+      wholeWordsToBeItalicized[word] ? (
+        <>
+          <mark key={nanoid()}>
+            <strong>
+              <i>{word}</i>
+            </strong>
+          </mark>{' '}
+        </>
+      ) : (
+        `${word} `
+      )
+    );
+
+    return finalTitle;
+  };
+
   return (
     <ImageCardContainer key={id} data-testid={testID} {...others}>
       <Thumbnail onClick={handleOpenClose} src={thumbnailUrl} />
-      <CardTitle variant="body2">{title}</CardTitle>
+      <CardTitle variant="body2">{renderTitle()}</CardTitle>
       {open && (
         <Modal onClose={handleOpenClose}>
           <img alt={title} src={imageUrl} />

@@ -24,7 +24,12 @@ export interface RequiredImageCardProps {
 
 export interface DefaultImageCardProps {}
 
-export interface OptionalImageCardProps {}
+export interface OptionalImageCardProps {
+  /**
+   * Word or piece of word that will guide what words will be italicized.
+   */
+  italicizedWord?: string;
+}
 
 export type ImageCardProps = RequiredImageCardProps &
   DefaultImageCardProps &
