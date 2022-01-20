@@ -23,7 +23,7 @@
   "scripts": {
     "prepare": "husky install",
     "lint:ts": "eslint --quiet --fix . -c ./.eslintrc.js",
-    "lint:css": "stylelint './src/**/*.styles.ts' --config .stylelintrc -f verbose",
+    "lint:css": "stylelint ./src/**/*.styles.ts --config .stylelintrc --fix --custom-syntax",
     "lint": "yarn lint:ts && yarn lint:css",
     "lint:report": "yarn lint -f json -o reports/eslint-report.json",
     "type-check": "tsc --noEmit",

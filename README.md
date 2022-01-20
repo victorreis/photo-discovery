@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Welcome to Photo Discovery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Features purposed](#features-purposed)
+- [Bonus features and implementations](#bonus-features-and-implementations)
+- [Endpoints consumed](#endpoints-consumed)
+- [Trade-offs and assumptions](#trade-offs-and-assumptions)
+- [Installation](#installation)
+- [Running](#running)
+- [Another scripts](#another-scripts)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+See the latest version online: [https://photo-discovery.vercel.app/](https://photo-discovery.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A simple and intuitive interface to search and view photos provided by [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The main objective of this project is to practice some development skills throught some technologies and concepts:
 
-### `npm test`
+- ReactJS
+- TypeScript
+- CSS-in-JS (styled-components)
+- Unity tests (Jest + React Testing Library)
+- Linters (eslint, style-lint)
+- Formatters (editorconfig, prettier)
+- git hooks (husky: pre-commit, prepare-commit-message)
+- conventional-commits (commitizen)
+- Scaffolding (scaffdog)
+- Environment config (.vscode/\*, .npmrc)
+- Usability
+- Responsivity
+- Clean Code
+- SOLID
+- KISS: “Keep It Simple, Stupid!”
+- YAGNI: “You Ain’t gonna need it”
+- DRY: “Do not Repeat Yourself”
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features purposed
 
-### `npm run build`
+- Provide a way to look to all the albums of a given user.
+- Provide a way to see the photo in full size.
+- Provide a way to search photos by title and to show their thumbnails.
+- Show all the words of the titles that was filtered by the searched in an italicized way.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Bonus features and implementations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- High level of quality (strong eslint/typescript rules, scaffolding, separation of responsabilities, tests, pre-commit with type-check/linting/tests etc).
+- Create a lot of components through the styled-components with a well organized structure of files (instead of using third part libraries).
+- Unity tests not only about the API consumption, but also the component styles, behaviors, snapshots etc.
+- Global tests configuration that provides a simple and standardized way to render the components through the React Testing Renderer or through React Testing Library, with the theme provider already embedded.
+- Server setup to allow testing the API calls in a easier way.
+- Create a thematization structure that allows to create how many themes that you want.
+- Create a customized theme interface with some structures implemented (borders, colors and typography).
+- Create a menu to switch between the available themes.
+- Allow to filter the albums and photos by text, by user and by album.
+- Load more albums and photos only when the user click in "Load more...". Looks like infinity scroll.
+- Implements responsivity to allow any screen size by using @media queries and the Grid Layout.
+- Usage of React Context, React Hooks.
+- Usage of Typescript generics, union type and interface manipulation and interesting Type utilities.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Endpoints consumed
 
-### `npm run eject`
+- Albums: [https://jsonplaceholder.typicode.com/albums](https://jsonplaceholder.typicode.com/albums)
+- Users: [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
+- Photos: [https://jsonplaceholder.typicode.com/albums/{albumId}/photos](https://jsonplaceholder.typicode.com/albums/{albumId}/photos)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Trade-offs and assumptions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- As long new albums and new users are not created frequently, I keep their data locally.
+- Instead of recording the photo's data locally to avoid API calls I prefered to to simulate a real system that get the newest data every time.
+- To avoid a low performance I implemented the "Load more..." functionality.
+- I had no time to create more themes and to equalize the light and dark themes, so I just showed the dark ones.
+- I had no time to create more unity tests, but I know that there are some more to do.
+- I had no time to get some fancy fonts to the site look better.
+- I did the components layout very simple, I know that there are a lot of aesthetic improvements to do.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Make sure that you have nodejs installed in you computer. Preference: node 16.
+- `yarn install` if you have the yarn installed globally or `npx yarn install`, if not.
 
-## Learn More
+## Running
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `yarn start` or `npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Another scripts
+
+- Typescript type check: `yarn type-check`
+- Prettier formating: `yarn format`
+- Linting code: `yarn lint`
+- Build: `yarn build`
+- Tests: `yarn test`
+- Scaffolding: `yarn g`
