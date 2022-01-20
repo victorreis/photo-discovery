@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 import { toPx } from '../../Utils/Transform';
-import { TextInputStyleProps } from './TextInput.types';
 
-export const Input = styled.input<TextInputStyleProps>`
+export const Input = styled.input`
   height: 3rem;
   margin: 0.5rem;
   border-width: 1px;

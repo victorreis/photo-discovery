@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { TestProps } from '../../Config/Tests/Test.types';
 import { Input } from './TextInput.styles';
@@ -9,24 +9,33 @@ export const textInputDefaults: Required<DefaultTextInputProps> &
   testID: 'TextInput',
 };
 
-export const TextInput: React.FC<TextInputProps> = (props): JSX.Element => {
+const TextInputComponent: React.ForwardRefRenderFunction<
+  HTMLInputElement,
+  TextInputProps
+> = (props, ref) => {
   const {
     testID = textInputDefaults.testID,
     children,
     value: initialValue,
     onChange,
+    filterInputRegex,
     ...others
   } = props;
 
   const [value, setvalue] = useState(initialValue);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setvalue(() => event.target.value);
-    onChange(event.target.value);
+    let newValue = event.target.value;
+    if (filterInputRegex) {
+      newValue = newValue.replaceAll(filterInputRegex, '');
+    }
+    setvalue(() => newValue);
+    onChange(newValue);
   };
 
   return (
     <Input
+      ref={ref}
       data-testid={testID}
       onChange={handleChange}
       type="text"
@@ -37,3 +46,4 @@ export const TextInput: React.FC<TextInputProps> = (props): JSX.Element => {
     </Input>
   );
 };
+export const TextInput = React.forwardRef(TextInputComponent);
