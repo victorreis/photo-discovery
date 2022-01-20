@@ -24,7 +24,7 @@ export const Select: React.FC<SelectProps> = (props): JSX.Element => {
   const [selectedId, setSelectedId] = useState<string>();
 
   const handleSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange(event.target.value);
+    onChange(event.target.value || '');
     setSelectedId(event.target.value);
   };
 

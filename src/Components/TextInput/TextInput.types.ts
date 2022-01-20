@@ -14,7 +14,12 @@ export interface RequiredTextInputProps {
 
 export interface DefaultTextInputProps {}
 
-export interface OptionalTextInputProps {}
+export interface OptionalTextInputProps {
+  /**
+   * Regular expression to be used to filter the input data.
+   */
+  filterInputRegex?: RegExp;
+}
 
 export type TextInputProps = RequiredTextInputProps &
   DefaultTextInputProps &
