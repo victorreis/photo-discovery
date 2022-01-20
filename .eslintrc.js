@@ -149,11 +149,9 @@ module.exports = {
     'no-plusplus': 0,
     'no-restricted-syntax': [
       2,
-      'ForStatement',
       'ForInStatement',
       'ForOfStatement',
       'DoWhileStatement',
-      'WhileStatement',
       'WithStatement',
       'TSEnumDeclaration',
     ],
