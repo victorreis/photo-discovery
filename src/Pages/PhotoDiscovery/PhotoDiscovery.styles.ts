@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Typography } from '../../Components/Typography';
 import { screenBreakpointRanges, screenBreakpoints } from '../../Theme/Types';
 
 const intermediateBreakpoint =
@@ -77,4 +78,8 @@ export const SearchContainer = styled.div`
   @media ${screenBreakpointRanges.xl} {
     grid-template-columns: 16rem 12rem 12rem 10rem;
   }
+`;
+
+export const FeedbackMessage = styled(Typography)`
+  margin-top: 3rem;
 `;
