@@ -5,8 +5,8 @@ import { API_URL, APPLICATION_ERROR } from '../../Config/constants';
 import { albumService } from './Album.service';
 import { Album } from './Album.types';
 
-describe(`Album service tests`, () => {
-  global.console.error = jest.fn();
+describe('album service tests', () => {
+  jest.spyOn(global.console, 'error').mockImplementation();
 
   const albumsUrl = `${API_URL}/albums`;
   const getAlbumsByUserIdUrl = (id: number | string) =>
@@ -60,44 +60,48 @@ describe(`Album service tests`, () => {
     )
   );
 
-  describe(`Successful tests`, () => {
+  describe('successful tests', () => {
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
 
     it(`should fetch data successfully from '${albumsUrl}'`, async () => {
+      expect.assertions(1);
       const albums = await albumService.getAll();
 
-      expect(albums).toEqual(albumsData);
+      expect(albums).toStrictEqual(albumsData);
     });
 
     it(`should fetch filtered data successfully from '${getAlbumsByUserIdUrl(
       '{userId}'
     )}`, async () => {
+      expect.assertions(3);
       const albums1 = await albumService.getByUserId(1);
-      expect(albums1).toEqual(filterDataByUserId(1));
-
       const albums2 = await albumService.getByUserId(2);
-      expect(albums2).toEqual(filterDataByUserId(2));
-
       const albums3 = await albumService.getByUserId(3);
-      expect(albums3).toEqual(filterDataByUserId(3));
+
+      expect(albums1).toStrictEqual(filterDataByUserId(1));
+      expect(albums2).toStrictEqual(filterDataByUserId(2));
+      expect(albums3).toStrictEqual(filterDataByUserId(3));
     });
 
     it(`should fetch no data successfully from '${getAlbumsByUserIdUrl(
       '{userId}'
     )} when '{userId}' doesn't exists`, async () => {
+      expect.assertions(1);
       const albums1 = await albumService.getByUserId(unexistentUserId);
-      expect(albums1).toEqual(filterDataByUserId(unexistentUserId));
+
+      expect(albums1).toStrictEqual(filterDataByUserId(unexistentUserId));
     });
   });
 
-  describe(`Unsuccessful tests`, () => {
+  describe('unsuccessful tests', () => {
     beforeAll(() => serverError.listen());
     afterEach(() => serverError.resetHandlers());
     afterAll(() => serverError.close());
 
     it(`should throw error when server returns status 500 when trying to fetch '${albumsUrl}'`, async () => {
+      expect.assertions(1);
       try {
         await albumService.getAll();
       } catch (e) {
@@ -110,6 +114,7 @@ describe(`Album service tests`, () => {
     it(`should throw error when server returns status 500 when trying to fetch '${getAlbumsByUserIdUrl(
       '{userId}'
     )}`, async () => {
+      expect.assertions(3);
       try {
         await albumService.getByUserId(1);
       } catch (e) {

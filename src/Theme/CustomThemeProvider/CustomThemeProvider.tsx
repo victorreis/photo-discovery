@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState, createContext } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -15,7 +15,7 @@ export const themes: Record<ThemeMode | 'default', CustomThemeType> = {
   deepSpace: deepSpaceTheme,
 };
 
-export const ThemeContext = React.createContext<
+export const ThemeContext = createContext<
   ThemeContextType | Record<string, never>
 >({});
 

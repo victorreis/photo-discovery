@@ -9,7 +9,7 @@ import { hexToRgb, toPx } from '../../Utils/Transform';
 import { Button, buttonDefaults } from './Button';
 import { RequiredButtonProps, ButtonProps } from './Button.types';
 
-describe(`Button component tests`, () => {
+describe('button component tests', () => {
   const text = 'text';
   const newType = 'submit';
   const onClick = jest.fn();
@@ -34,8 +34,9 @@ describe(`Button component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(buttonDefaults.testID);
 
@@ -43,6 +44,7 @@ describe(`Button component tests`, () => {
     });
 
     it(`should render the text`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
 
@@ -50,14 +52,17 @@ describe(`Button component tests`, () => {
     });
 
     it(`should call the onCLick callback when the button is clicked`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(buttonDefaults.testID);
 
       fireEvent.click(testInstance);
-      expect(onClick).toHaveBeenCalled();
+
+      expect(onClick).toHaveBeenCalledWith();
     });
 
     it(`should render '${buttonDefaults.type}' as the default type`, () => {
+      expect.assertions(1);
       const instance = setup().renderRTR().root;
       const element = instance.findByProps({
         type: buttonDefaults.type,
@@ -67,6 +72,7 @@ describe(`Button component tests`, () => {
     });
 
     it(`should override the default type when it is passed as prop`, () => {
+      expect.assertions(1);
       const instance = setup({
         ...requiredProps,
         type: newType,
@@ -77,8 +83,9 @@ describe(`Button component tests`, () => {
     });
   });
 
-  describe(`style tests`, () => {
+  describe('style tests', () => {
     it(`should have style the correct styles`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(buttonDefaults.testID);
 
@@ -93,9 +100,11 @@ describe(`Button component tests`, () => {
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

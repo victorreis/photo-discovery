@@ -75,7 +75,7 @@ export const ImageCard: React.FC<ImageCardProps> = (props): JSX.Element => {
   };
 
   return (
-    <ImageCardContainer key={id} data-testid={testID} {...others}>
+    <ImageCardContainer data-testid={testID} key={id} {...others}>
       <Thumbnail onClick={handleOpenClose} src={thumbnailUrl} />
       <CardTitle variant="body2">{renderTitle()}</CardTitle>
       {open && (

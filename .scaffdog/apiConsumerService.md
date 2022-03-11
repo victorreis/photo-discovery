@@ -64,7 +64,7 @@ import { API_URL, APPLICATION_ERROR } from '../../Config/constants';
 import { {{ inputs.value | camel }}Service } from './{{ inputs.value | pascal }}.service';
 import { {{ inputs.value | pascal }} } from './{{ inputs.value | pascal }}.types';
 
-describe(`{{ inputs.value | pascal }} service tests`, () => {
+describe('{{ inputs.value | pascal }} service tests', () => {
   global.console.error = jest.fn();
 
   const {{ inputs.value | camel }}sUrl = `${API_URL}/{{ inputs.value | camel }}s`;
@@ -130,7 +130,7 @@ describe(`{{ inputs.value | pascal }} service tests`, () => {
     )
   );
 
-  describe(`Successful tests`, () => {
+  describe('Successful tests', () => {
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
@@ -145,12 +145,15 @@ describe(`{{ inputs.value | pascal }} service tests`, () => {
       '{albumId}'
     )}`, async () => {
       const {{ inputs.value | camel }}s1 = await {{ inputs.value | camel }}Service.getByAlbumId(1);
+
       expect({{ inputs.value | camel }}s1).toEqual(filterDataByAlbumId(1));
 
       const {{ inputs.value | camel }}s2 = await {{ inputs.value | camel }}Service.getByAlbumId(2);
+
       expect({{ inputs.value | camel }}s2).toEqual(filterDataByAlbumId(2));
 
       const {{ inputs.value | camel }}s3 = await {{ inputs.value | camel }}Service.getByAlbumId(3);
+
       expect({{ inputs.value | camel }}s3).toEqual(filterDataByAlbumId(3));
     });
 
@@ -158,11 +161,12 @@ describe(`{{ inputs.value | pascal }} service tests`, () => {
       '{albumId}'
     )} when '{albumId}' doesn't exists`, async () => {
       const {{ inputs.value | camel }}s = await {{ inputs.value | camel }}Service.getByAlbumId(unexistentAlbumId);
+
       expect({{ inputs.value | camel }}s).toEqual(filterDataByAlbumId(unexistentAlbumId));
     });
   });
 
-  describe(`Unsuccessful tests`, () => {
+  describe('Unsuccessful tests', () => {
     beforeAll(() => serverError.listen());
     afterEach(() => serverError.resetHandlers());
     afterAll(() => serverError.close());

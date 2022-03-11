@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-commented-out-tests */
 import {
   renderJestDomCreator,
   renderRTRCreator,
@@ -6,7 +7,7 @@ import {
 import { TextInput, textInputDefaults } from './TextInput';
 import { RequiredTextInputProps, TextInputProps } from './TextInput.types';
 
-describe(`TextInput component tests`, () => {
+describe('textInput component tests', () => {
   const value = 'text';
   const onChange = jest.fn();
 
@@ -30,8 +31,9 @@ describe(`TextInput component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(textInputDefaults.testID);
 
@@ -39,6 +41,7 @@ describe(`TextInput component tests`, () => {
     });
 
     // it(`should render the text`, () => {
+    //   expect.assertions(1);
     //   setup().renderJestDom();
     //   const element = screen.getByText(text);
 
@@ -46,6 +49,7 @@ describe(`TextInput component tests`, () => {
     // });
 
     // it(`should render '${textInputDefaults.variant}' as the default variant`, () => {
+    //   expect.assertions(1);
     //   const instance = setup().renderRTR().root;
     //   const element = instance.findByProps({
     //     variant: textInputDefaults.variant,
@@ -55,6 +59,7 @@ describe(`TextInput component tests`, () => {
     // });
 
     // it(`should override the default variant when it is passed as prop`, () => {
+    //   expect.assertions(1);
     //   const instance = setup({
     //     ...requiredProps,
     //     variant: newVariant,
@@ -65,8 +70,9 @@ describe(`TextInput component tests`, () => {
     // });
   });
 
-  // describe(`style tests`, () => {
+  // describe('style tests', () => {
   //   it(`should have style the Container component`, () => {
+  //     expect.assertions(1);
   //     setup().renderJestDom();
   //     const container = screen.getByTestId(textInputDefaults.testID);
 
@@ -77,9 +83,11 @@ describe(`TextInput component tests`, () => {
   //   });
   // });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

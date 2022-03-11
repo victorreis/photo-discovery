@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Normalize } from 'styled-normalize';
@@ -6,11 +6,10 @@ import { Normalize } from 'styled-normalize';
 import { App } from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <Normalize />
-
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
 

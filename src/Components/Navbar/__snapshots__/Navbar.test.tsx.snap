@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar component tests snapshot tests should render correctly 1`] = `
+exports[`navbar component tests snapshot tests should render correctly 1`] = `
 <div
   className="NavbarContainer-photo-discovery__sc-9em23l-0 lmUnAu"
   data-testid="Navbar"

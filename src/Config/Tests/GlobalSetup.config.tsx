@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import * as React from 'react';
+import { createElement, FC } from 'react';
 import { create } from 'react-test-renderer';
 
 import { render } from '@testing-library/react';
@@ -8,20 +9,20 @@ import '@testing-library/jest-dom';
 import { CustomThemeProvider } from '../../Theme/CustomThemeProvider';
 
 const renderJestDomCreator = <ComponentProps extends Record<string, any>>(
-  componentReference: React.FC<ComponentProps>,
+  componentReference: FC<ComponentProps>,
   props: ComponentProps
 ) =>
-  render(React.createElement(componentReference, { ...props }), {
+  render(createElement(componentReference, { ...props }), {
     wrapper: CustomThemeProvider,
   });
 
 const renderRTRCreator = <ComponentProps extends Record<string, any>>(
-  componentReference: React.FC<ComponentProps>,
+  componentReference: FC<ComponentProps>,
   props: ComponentProps
 ) =>
   create(
     <CustomThemeProvider>
-      {React.createElement(componentReference, { ...props })}
+      {createElement(componentReference, { ...props })}
     </CustomThemeProvider>
   );
 

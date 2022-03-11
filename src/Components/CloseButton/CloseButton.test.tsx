@@ -10,7 +10,7 @@ import {
   CloseButtonProps,
 } from './CloseButton.types';
 
-describe(`CloseButton component tests`, () => {
+describe('closeButton component tests', () => {
   const onClick = jest.fn();
 
   const requiredProps: RequiredCloseButtonProps = {
@@ -32,8 +32,9 @@ describe(`CloseButton component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(closeButtonDefaults.testID);
 
@@ -41,16 +42,20 @@ describe(`CloseButton component tests`, () => {
     });
 
     it(`should call the onCLick callback when the button is clicked`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(closeButtonDefaults.testID);
 
       fireEvent.click(testInstance);
-      expect(onClick).toHaveBeenCalled();
+
+      expect(onClick).toHaveBeenCalledTimes(1);
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
+
       const generatedJson = setup().renderRTR().toJSON();
       expect(generatedJson).toMatchSnapshot();
     });

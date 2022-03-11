@@ -8,7 +8,7 @@ import { toPx } from '../../Utils/Transform';
 import { ImageCard, imageCardDefaults } from './ImageCard';
 import { ImageCardProps, RequiredImageCardProps } from './ImageCard.types';
 
-describe(`ImageCard component tests`, () => {
+describe('imageCard component tests', () => {
   const id = '1';
   const thumbnailUrl = 'https://via.placeholder.com/600/771796';
   const imageUrl = 'https://via.placeholder.com/150/771796';
@@ -36,8 +36,9 @@ describe(`ImageCard component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(imageCardDefaults.testID);
 
@@ -45,6 +46,7 @@ describe(`ImageCard component tests`, () => {
     });
 
     it(`should render the text`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(title);
 
@@ -52,8 +54,9 @@ describe(`ImageCard component tests`, () => {
     });
   });
 
-  describe(`style tests`, () => {
+  describe('style tests', () => {
     it(`should have style the Container component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(imageCardDefaults.testID);
 
@@ -64,9 +67,11 @@ describe(`ImageCard component tests`, () => {
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

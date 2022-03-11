@@ -21,7 +21,9 @@ export const Button: React.FC<ButtonProps> = (props): JSX.Element => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.stopPropagation();
-    if (onClick) onClick();
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (

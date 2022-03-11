@@ -16,7 +16,9 @@ export const Modal: React.FC<ModalProps> = (props): JSX.Element => {
   const { testID = modalDefaults.testID, children, onClose, ...others } = props;
 
   const handleClose = () => {
-    if (onClose) onClose();
+    if (onClose) {
+      onClose();
+    }
   };
 
   return (

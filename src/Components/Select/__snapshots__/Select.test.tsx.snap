@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select component tests snapshot tests should render correctly 1`] = `
+exports[`select component tests snapshot tests should render correctly 1`] = `
 <select
   className="SelectContainer-photo-discovery__sc-i3jpgt-0 iMvynY"
   data-testid="Select"

@@ -8,7 +8,7 @@ import { hexToRgb, toPx } from '../../Utils/Transform';
 import { Select, selectDefaults } from './Select';
 import { RequiredSelectProps, SelectOption, SelectProps } from './Select.types';
 
-describe(`Select component tests`, () => {
+describe('select component tests', () => {
   const options: SelectOption[] = [
     { id: 1, value: 1, text: 'test1' },
     { id: 2, value: 2, text: 'test2' },
@@ -36,8 +36,9 @@ describe(`Select component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(selectDefaults.testID);
 
@@ -45,8 +46,9 @@ describe(`Select component tests`, () => {
     });
   });
 
-  describe(`style tests`, () => {
+  describe('style tests', () => {
     it(`should have style the Container component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(selectDefaults.testID);
 
@@ -60,9 +62,11 @@ describe(`Select component tests`, () => {
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

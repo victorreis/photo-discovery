@@ -8,7 +8,7 @@ import { hexToRgb } from '../../Utils/Transform';
 import { Typography, typographyDefaults } from './Typography';
 import { RequiredTypographyProps, TypographyProps } from './Typography.types';
 
-describe(`Typography component tests`, () => {
+describe('typography component tests', () => {
   const text = 'text';
   const newVariant = 'h1';
 
@@ -31,8 +31,9 @@ describe(`Typography component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(typographyDefaults.testID);
 
@@ -40,6 +41,7 @@ describe(`Typography component tests`, () => {
     });
 
     it(`should render the text`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
 
@@ -47,6 +49,7 @@ describe(`Typography component tests`, () => {
     });
 
     it(`should render '${typographyDefaults.variant}' as the default variant`, () => {
+      expect.assertions(1);
       const instance = setup().renderRTR().root;
       const element = instance.findByProps({
         variant: typographyDefaults.variant,
@@ -56,6 +59,7 @@ describe(`Typography component tests`, () => {
     });
 
     it(`should override the default variant when it is passed as prop`, () => {
+      expect.assertions(1);
       const instance = setup({
         ...requiredProps,
         variant: newVariant,
@@ -66,8 +70,9 @@ describe(`Typography component tests`, () => {
     });
   });
 
-  describe(`style tests`, () => {
+  describe('style tests', () => {
     it(`should have style the Container component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(typographyDefaults.testID);
 
@@ -78,9 +83,11 @@ describe(`Typography component tests`, () => {
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

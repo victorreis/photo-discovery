@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CloseButton component tests snapshot tests should render correctly 1`] = `
+exports[`closeButton component tests snapshot tests should render correctly 1`] = `
 <button
   className="CloseButtonContainer-photo-discovery__sc-khdkyf-1 dcJekt"
   data-testid="CloseButton"

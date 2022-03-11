@@ -8,7 +8,7 @@ import { closeButtonDefaults } from '../CloseButton/CloseButton';
 import { Modal, modalDefaults } from './Modal';
 import { RequiredModalProps, ModalProps } from './Modal.types';
 
-describe(`Modal component tests`, () => {
+describe('modal component tests', () => {
   const text = 'text';
   const onClose = jest.fn();
 
@@ -33,8 +33,9 @@ describe(`Modal component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(modalDefaults.testID);
 
@@ -42,6 +43,7 @@ describe(`Modal component tests`, () => {
     });
 
     it(`should render the text`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
 
@@ -49,29 +51,37 @@ describe(`Modal component tests`, () => {
     });
 
     it(`should call the onCLick callback when the '${modalBackdropContainerId}' is clicked`, () => {
+      expect.assertions(1);
+
       setup({ ...requiredProps, onClose }).renderJestDom();
       const modalBackdropContainerInstance = screen.getByTestId(
         modalBackdropContainerId
       );
 
       fireEvent.click(modalBackdropContainerInstance);
-      expect(onClose).toHaveBeenCalled();
+
+      expect(onClose).toHaveBeenCalledWith();
     });
 
     it(`should call the onCLick callback when the '${closeButtonDefaults.testID}' is clicked`, () => {
+      expect.assertions(1);
+
       setup({ ...requiredProps, onClose }).renderJestDom();
       const closeButtonInstance = screen.getByTestId(
         closeButtonDefaults.testID
       );
 
       fireEvent.click(closeButtonInstance);
-      expect(onClose).toHaveBeenCalled();
+
+      expect(onClose).toHaveBeenCalledWith();
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

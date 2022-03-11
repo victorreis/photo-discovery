@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component tests snapshot tests should render correctly 1`] = `
+exports[`modal component tests snapshot tests should render correctly 1`] = `
 <div
   className="ModalContainer-photo-discovery__sc-1x2la9l-0 kZrEh"
   data-testid="Modal"

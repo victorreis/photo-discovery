@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ImageCard component tests snapshot tests should render correctly 1`] = `
+exports[`imageCard component tests snapshot tests should render correctly 1`] = `
 <div
   className="ImageCardContainer-photo-discovery__sc-40sd5q-0 jIPeRU"
   data-testid="ImageCard"

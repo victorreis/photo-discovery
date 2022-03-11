@@ -117,7 +117,7 @@ import { hexToRgb } from '../../Utils/Transform';
 import { {{ inputs.value | pascal }}, {{ inputs.value | camel }}Defaults } from './{{ inputs.value | pascal }}';
 import { Required{{ inputs.value | pascal }}Props, {{ inputs.value | pascal }}Props } from './{{ inputs.value | pascal }}.types';
 
-describe(`{{ inputs.value | pascal }} component tests`, () => {
+describe('{{ inputs.value | pascal }} component tests', () => {
   const text = 'text';
   const newVariant = 'h1';
 
@@ -140,8 +140,9 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     return { renderRTR, renderJestDom };
   };
 
-  describe(`behavior tests`, () => {
+  describe('behavior tests', () => {
     it(`should render the component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId({{ inputs.value | camel }}Defaults.testID);
 
@@ -149,6 +150,7 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     });
 
     it(`should render the text`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
 
@@ -156,7 +158,9 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     });
 
     it(`should render '${ {{ inputs.value | camel }}Defaults.variant}' as the default variant`, () => {
-      const instance = setup().renderRTR().root;
+      expect.assertions(1);
+const instance =
+      setup().renderRTR().root;
       const element = instance.findByProps({
         variant: {{ inputs.value | camel }}Defaults.variant,
       });
@@ -165,7 +169,10 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     });
 
     it(`should override the default variant when it is passed as prop`, () => {
-      const instance = setup({
+      expect.assertions(1);
+const instance =
+
+      setup({
         ...requiredProps,
         variant: newVariant,
       }).renderRTR().root;
@@ -175,8 +182,9 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     });
   });
 
-  describe(`style tests`, () => {
+  describe('style tests', () => {
     it(`should have style the Container component`, () => {
+      expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId({{ inputs.value | camel }}Defaults.testID);
 
@@ -187,9 +195,11 @@ describe(`{{ inputs.value | pascal }} component tests`, () => {
     });
   });
 
-  describe(`snapshot tests`, () => {
+  describe('snapshot tests', () => {
     it(`should render correctly`, () => {
+      expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
+
       expect(generatedJson).toMatchSnapshot();
     });
   });

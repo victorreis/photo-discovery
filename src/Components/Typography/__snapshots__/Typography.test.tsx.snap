@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Typography component tests snapshot tests should render correctly 1`] = `
+exports[`typography component tests snapshot tests should render correctly 1`] = `
 <span
   className="TypographyContainer-photo-discovery__sc-1t3hmm1-0 ivZVrZ"
   data-testid="Typography"
