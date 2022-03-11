@@ -114,7 +114,6 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 0,
     'no-use-before-define': 0,
     '@typescript-eslint/no-use-before-define': 2,
-
     curly: 2,
     'import/order': 0,
     'import/prefer-default-export': 0,
@@ -181,6 +180,7 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
+    'react/jsx-props-no-spreading': 0,
     'react/jsx-max-depth': [2, { max: 3 }],
     'react/jsx-newline': 0,
     'react/jsx-no-literals': 0,
@@ -210,6 +210,7 @@ module.exports = {
       files: ['src/**/*.test.tsx', 'src/**/*.test.ts', 'src/**/*.config.tsx'],
       rules: {
         'import/no-extraneous-dependencies': 0,
+        'testing-library/await-async-query': 0,
       },
     },
   ],
