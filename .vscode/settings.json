@@ -3,6 +3,9 @@
     "editor.defaultFormatter": null,
     "editor.formatOnSave": false
   },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.autoIndent": "full",
@@ -39,7 +42,9 @@
     "**/storybook-static": true,
     "**/android": true,
     "**/ios": true,
-    "**/lib": true
+    "**/lib": true,
+    "**/coverage": true,
+    "**/dist": true
   },
   "html.format.enable": false,
   "javascript.format.enable": false,
@@ -55,9 +60,12 @@
     "**/yarn.lock": true,
     "**/android": true,
     "**/ios": true,
-    "**/lib": true
+    "**/lib": true,
+    "**/coverage": true,
+    "**/dist": true
   },
   "search.useIgnoreFiles": true,
+  "tsimporter.filesToScan": ["src/**/*.ts", "src/**/*.tsx"],
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

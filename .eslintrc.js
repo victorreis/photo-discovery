@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -65,40 +66,42 @@ module.exports = {
     formComponents: ['CustomForm', { name: 'Form', formAttribute: 'endpoint' }],
     linkComponents: ['Hyperlink', { name: 'Link', linkAttribute: 'to' }],
     jest: {
-      version: 27,
+      version: require('jest/package.json').version,
     },
   },
   extends: [
-    'airbnb',
-    'airbnb/hooks',
-    'airbnb-typescript',
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'plugin:jest/recommended',
-    'plugin:jest/style',
-    'plugin:jsx-a11y/recommended',
-    'plugin:markdown/recommended',
-    'plugin:prettier/recommended',
-    'plugin:promise/recommended',
     'plugin:react/all',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'react-app/jest',
+    'plugin:jsx-a11y/recommended',
+    'plugin:jest/all',
+    // 'plugin:@typescript-eslint/eslint-recommended',
+    // 'airbnb',
+    // 'airbnb/hooks',
+    // 'airbnb-typescript',
+    // 'plugin:import/recommended',
+    // 'plugin:import/typescript',
+    // 'plugin:markdown/recommended',
+    // 'plugin:prettier/recommended',
+    // 'plugin:promise/recommended',
+    // 'react-app',
+    // 'react-app/jest',
+    // 'plugin:jest-react/recommended',
   ],
   plugins: [
-    'import',
-    'import-helpers',
-    'jsx-a11y',
-    'prettier',
-    'promise',
+    '@typescript-eslint',
     'react',
     'react-hooks',
-    '@typescript-eslint',
     'jest',
+    'jsx-a11y',
+    // 'prettier',
+    // 'promise',
+    // 'jest-react',
+    // 'import',
+    // 'import-helpers',
   ],
   rules: {
     '@typescript-eslint/explicit-member-accessibility': 0,
@@ -115,26 +118,23 @@ module.exports = {
     'no-use-before-define': 0,
     '@typescript-eslint/no-use-before-define': 2,
     curly: 2,
-    'import/order': 0,
-    'import/prefer-default-export': 0,
-    'import-helpers/order-imports': [
-      2,
-      {
-        newlinesBetween: 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-          ignoreCase: true,
-        },
-        groups: ['/^react/', 'module', ['parent', 'sibling', 'index']],
-      },
-    ],
+    // 'import/order': 0,
+    // 'import/prefer-default-export': 0,
+    // 'import-helpers/order-imports': [
+    //   2,
+    //   {
+    //     newlinesBetween: 'always',
+    //     alphabetize: {
+    //       order: 'asc',
+    //       caseInsensitive: true,
+    //       ignoreCase: true,
+    //     },
+    //     groups: ['/^react/', 'module', ['parent', 'sibling', 'index']],
+    //   },
+    // ],
     'jest/no-conditional-expect': 0,
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'warn',
-    'jest/valid-expect': 'error',
+    'jest/no-hooks': 0,
+    'jest/require-hook': 0,
     'no-alert': 2,
     'no-console': [
       2,
@@ -155,17 +155,17 @@ module.exports = {
       'TSEnumDeclaration',
     ],
     'no-undef': 2,
-    'no-unused-vars': 2,
     'prefer-template': 2,
-    'prettier/prettier': [
-      'error',
-      {},
-      {
-        usePrettierrc: true,
-      },
-    ],
+    // 'prettier/prettier': [
+    //   'error',
+    //   {},
+    //   {
+    //     usePrettierrc: true,
+    //   },
+    // ],
     radix: 2,
     'react/destructuring-assignment': 2,
+    'react/forbid-component-props': 0,
     'react/function-component-definition': [
       2,
       {
@@ -180,9 +180,22 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
+    'react/jsx-indent': 0,
+    'react/jsx-indent-props': 0,
+    'react/jsx-max-props-per-line': [2, { maximum: 1, when: 'multiline' }],
     'react/jsx-props-no-spreading': 0,
     'react/jsx-max-depth': [2, { max: 3 }],
     'react/jsx-newline': 0,
+    'react/jsx-no-bind': [
+      2,
+      {
+        ignoreDOMComponents: false,
+        ignoreRefs: false,
+        allowArrowFunctions: true,
+        allowFunctions: false,
+        allowBind: false,
+      },
+    ],
     'react/jsx-no-literals': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-props-no-spreading': 0,
@@ -194,24 +207,24 @@ module.exports = {
         html: true,
       },
     ],
-    'react-hooks/exhaustive-deps': 2,
-    'react-hooks/rules-of-hooks': 2,
-    'testing-library/await-async-query': 0,
-    'testing-library/no-await-sync-query': 0,
+    // 'react-hooks/exhaustive-deps': 2,
+    // 'react-hooks/rules-of-hooks': 2,
+    // 'testing-library/await-async-query': 0,
+    // 'testing-library/no-await-sync-query': 0,
   },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'], // Your TypeScript files extension
-      parserOptions: {
-        project: ['./tsconfig.json'], // Specify it only for TypeScript files
-      },
-    },
-    {
-      files: ['src/**/*.test.tsx', 'src/**/*.test.ts', 'src/**/*.config.tsx'],
-      rules: {
-        'import/no-extraneous-dependencies': 0,
-        'testing-library/await-async-query': 0,
-      },
-    },
-  ],
+  // overrides: [
+  //   {
+  //     files: ['*.ts', '*.tsx'], // Your TypeScript files extension
+  //     parserOptions: {
+  //       project: ['./tsconfig.json'], // Specify it only for TypeScript files
+  //     },
+  //   },
+  //   {
+  //     files: ['src/**/*.test.tsx', 'src/**/*.test.ts', 'src/**/*.config.tsx'],
+  //     rules: {
+  //       'import/no-extraneous-dependencies': 0,
+  //       'testing-library/await-async-query': 0,
+  //     },
+  //   },
+  // ],
 };

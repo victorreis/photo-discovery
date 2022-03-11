@@ -22,7 +22,7 @@
     "disableSizeLimit": true,
 
     /* Language and Environment */
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "es5", "esnext"],
     "jsx": "react-jsx",
     "experimentalDecorators": true,
