@@ -94,11 +94,11 @@ export const PhotoDiscovery: React.FC = (): JSX.Element => {
         return album;
       }
 
-      const photos = album.photos.filter((photo) => {
-        return photo.title.includes(
+      const photos = album.photos.filter((photo) =>
+        photo.title.includes(
           currentSearchValues.searchValue.trimStart().trimEnd()
-        );
-      });
+        )
+      );
       return { ...album, photos };
     },
     [currentSearchValues]
@@ -194,9 +194,9 @@ export const PhotoDiscovery: React.FC = (): JSX.Element => {
   };
 
   const handleLoadMore = () => {
-    setNumberOfLoadedAlbums((prevState) => {
-      return Math.min(albums.length, prevState + baseNumberOfLoadedAlbums);
-    });
+    setNumberOfLoadedAlbums((prevState) =>
+      Math.min(albums.length, prevState + baseNumberOfLoadedAlbums)
+    );
   };
 
   const handleSearch = () => {
@@ -237,10 +237,10 @@ export const PhotoDiscovery: React.FC = (): JSX.Element => {
         const renderImageCard = () =>
           album.photos?.map(({ id, title, url, thumbnailUrl }) => (
             <ImageCard
+              key={id}
               id={String(id)}
               imageUrl={url}
               italicizedWord={currentSearchValues.searchValue}
-              key={id}
               thumbnailUrl={thumbnailUrl}
               title={title}
             />
@@ -316,11 +316,11 @@ export const PhotoDiscovery: React.FC = (): JSX.Element => {
       <Typography variant="h4">Discover photos by searching for...</Typography>
       <SearchContainer>
         <TextInput
+          ref={textInputRef}
           filterInputRegex={/[^A-Za-z]/gi}
           onChange={handleChangeSearchValue}
           onKeyPress={handleKeyPressSearchValue}
           placeholder="Type some keyword..."
-          ref={textInputRef}
           value={searchValue}
         />
         <Select

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 import { CloseButtonStyleProps } from './CloseButton.types';
 
-// The icon library does not pass the onClick to the SVG component, so I need to create thes transparent container.
+// The icon library does not pass the onClick to the SVG component,
+// so I need to create thes transparent container.
 export const TransparentContainer = styled.div`
   cursor: pointer;
   position: absolute;

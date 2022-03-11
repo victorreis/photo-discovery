@@ -32,7 +32,7 @@ describe('typography component tests', () => {
   };
 
   describe('behavior tests', () => {
-    it(`should render the component`, () => {
+    it('should render the component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(typographyDefaults.testID);
@@ -40,7 +40,7 @@ describe('typography component tests', () => {
       expect(testInstance).toBeTruthy();
     });
 
-    it(`should render the text`, () => {
+    it('should render the text', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
@@ -58,7 +58,7 @@ describe('typography component tests', () => {
       expect(element).toBeTruthy();
     });
 
-    it(`should override the default variant when it is passed as prop`, () => {
+    it('should override the default variant when it is passed as prop', () => {
       expect.assertions(1);
       const instance = setup({
         ...requiredProps,
@@ -71,7 +71,7 @@ describe('typography component tests', () => {
   });
 
   describe('style tests', () => {
-    it(`should have style the Container component`, () => {
+    it('should have style the Container component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(typographyDefaults.testID);
@@ -84,7 +84,7 @@ describe('typography component tests', () => {
   });
 
   describe('snapshot tests', () => {
-    it(`should render correctly`, () => {
+    it('should render correctly', () => {
       expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
 

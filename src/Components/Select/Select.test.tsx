@@ -37,7 +37,7 @@ describe('select component tests', () => {
   };
 
   describe('behavior tests', () => {
-    it(`should render the component`, () => {
+    it('should render the component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(selectDefaults.testID);
@@ -47,7 +47,7 @@ describe('select component tests', () => {
   });
 
   describe('style tests', () => {
-    it(`should have style the Container component`, () => {
+    it('should have style the Container component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(selectDefaults.testID);
@@ -63,7 +63,7 @@ describe('select component tests', () => {
   });
 
   describe('snapshot tests', () => {
-    it(`should render correctly`, () => {
+    it('should render correctly', () => {
       expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
 

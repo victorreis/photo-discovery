@@ -35,9 +35,9 @@ const TextInputComponent: ForwardRefRenderFunction<
 
   return (
     <Input
+      ref={ref}
       data-testid={testID}
       onChange={handleChange}
-      ref={ref}
       type="text"
       value={value}
       {...others}

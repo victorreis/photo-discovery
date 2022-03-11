@@ -33,7 +33,7 @@ describe('closeButton component tests', () => {
   };
 
   describe('behavior tests', () => {
-    it(`should render the component`, () => {
+    it('should render the component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(closeButtonDefaults.testID);
@@ -41,7 +41,7 @@ describe('closeButton component tests', () => {
       expect(testInstance).toBeTruthy();
     });
 
-    it(`should call the onCLick callback when the button is clicked`, () => {
+    it('should call the onCLick callback when the button is clicked', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(closeButtonDefaults.testID);
@@ -53,7 +53,7 @@ describe('closeButton component tests', () => {
   });
 
   describe('snapshot tests', () => {
-    it(`should render correctly`, () => {
+    it('should render correctly', () => {
       expect.assertions(1);
 
       const generatedJson = setup().renderRTR().toJSON();

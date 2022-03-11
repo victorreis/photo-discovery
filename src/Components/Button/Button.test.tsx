@@ -35,7 +35,7 @@ describe('button component tests', () => {
   };
 
   describe('behavior tests', () => {
-    it(`should render the component`, () => {
+    it('should render the component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(buttonDefaults.testID);
@@ -43,7 +43,7 @@ describe('button component tests', () => {
       expect(testInstance).toBeTruthy();
     });
 
-    it(`should render the text`, () => {
+    it('should render the text', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const element = screen.getByText(text);
@@ -51,7 +51,7 @@ describe('button component tests', () => {
       expect(element).toBeInTheDocument();
     });
 
-    it(`should call the onCLick callback when the button is clicked`, () => {
+    it('should call the onCLick callback when the button is clicked', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(buttonDefaults.testID);
@@ -71,7 +71,7 @@ describe('button component tests', () => {
       expect(element).toBeTruthy();
     });
 
-    it(`should override the default type when it is passed as prop`, () => {
+    it('should override the default type when it is passed as prop', () => {
       expect.assertions(1);
       const instance = setup({
         ...requiredProps,
@@ -84,7 +84,7 @@ describe('button component tests', () => {
   });
 
   describe('style tests', () => {
-    it(`should have style the correct styles`, () => {
+    it('should have style the correct styles', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const container = screen.getByTestId(buttonDefaults.testID);
@@ -101,7 +101,7 @@ describe('button component tests', () => {
   });
 
   describe('snapshot tests', () => {
-    it(`should render correctly`, () => {
+    it('should render correctly', () => {
       expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
 

@@ -29,8 +29,7 @@ export const Logo = styled(Typography)`
   text-transform: uppercase;
   justify-content: center;
 
-  ${({ theme }) =>
-    `background: linear-gradient(135deg,
+  ${({ theme }) => `background: linear-gradient(135deg,
      ${theme.colors.main.effect.dark},
      ${theme.colors.main.effect.light},
      ${theme.colors.main.detail.darker},

@@ -34,7 +34,7 @@ describe('navbar component tests', () => {
   };
 
   describe('behavior tests', () => {
-    it(`should render the component`, () => {
+    it('should render the component', () => {
       expect.assertions(1);
       setup().renderJestDom();
       const testInstance = screen.getByTestId(navbarDefaults.testID);
@@ -83,7 +83,7 @@ describe('navbar component tests', () => {
   });
 
   describe('snapshot tests', () => {
-    it(`should render correctly`, () => {
+    it('should render correctly', () => {
       expect.assertions(1);
       const generatedJson = setup().renderRTR().toJSON();
 
