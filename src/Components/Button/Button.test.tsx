@@ -5,7 +5,8 @@ import {
   screen,
 } from '../../Config/Tests/GlobalSetup.config';
 import { themes } from '../../Theme/CustomThemeProvider';
-import { hexToRgb, toPx } from '../../Utils/Transform';
+import { hexToRgb } from '../../Utils/Transform/hexToRgb.util';
+import { toPx } from '../../Utils/Transform/toPx.util';
 import { Button, buttonDefaults } from './Button';
 import { RequiredButtonProps, ButtonProps } from './Button.types';
 

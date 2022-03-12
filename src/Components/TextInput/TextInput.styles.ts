@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { toPx } from '../../Utils/Transform';
+import { toPx } from '../../Utils/Transform/toPx.util';
 
 export const Input = styled.input`
   height: 3rem;

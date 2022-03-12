@@ -4,7 +4,7 @@ import {
   screen,
 } from '../../Config/Tests/GlobalSetup.config';
 import { themes } from '../../Theme/CustomThemeProvider';
-import { hexToRgb } from '../../Utils/Transform';
+import { hexToRgb } from '../../Utils/Transform/hexToRgb.util';
 import { Typography, typographyDefaults } from './Typography';
 import { RequiredTypographyProps, TypographyProps } from './Typography.types';
 

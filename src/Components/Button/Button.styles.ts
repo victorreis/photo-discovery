@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { toPx } from '../../Utils/Transform';
+import { toPx } from '../../Utils/Transform/toPx.util';
 import { ButtonStyleProps } from './Button.types';
 
 export const ButtonContainer = styled.button<ButtonStyleProps>`

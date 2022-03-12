@@ -4,7 +4,7 @@ import {
   screen,
 } from '../../Config/Tests/GlobalSetup.config';
 import { themes } from '../../Theme/CustomThemeProvider';
-import { toPx } from '../../Utils/Transform';
+import { toPx } from '../../Utils/Transform/toPx.util';
 import { ImageCard, imageCardDefaults } from './ImageCard';
 import { ImageCardProps, RequiredImageCardProps } from './ImageCard.types';
 

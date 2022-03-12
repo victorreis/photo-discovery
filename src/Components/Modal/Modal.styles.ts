@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { screenBreakpointRanges, screenBreakpoints } from '../../Theme/Types';
-import { toPx } from '../../Utils/Transform';
+import { toPx } from '../../Utils/Transform/toPx.util';
 
 export const ModalContainer = styled.div`
   position: absolute;

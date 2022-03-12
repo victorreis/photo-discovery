@@ -11,7 +11,7 @@ export const hexToRgb = (hex: string) => {
     formatedHex
   );
 
-  return result
+  return result && result.length >= 3
     ? `rgb(${parseInt(result[1] || '0', 16)}, ${parseInt(
         result[2] || '0',
         16
@@ -20,5 +20,3 @@ export const hexToRgb = (hex: string) => {
       })`
     : 'rgb(0,0,0)';
 };
-
-export const toPx = (number: number): string => `${number}px`;

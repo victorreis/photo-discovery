@@ -4,7 +4,8 @@ import {
   screen,
 } from '../../Config/Tests/GlobalSetup.config';
 import { themes } from '../../Theme/CustomThemeProvider';
-import { hexToRgb, toPx } from '../../Utils/Transform';
+import { hexToRgb } from '../../Utils/Transform/hexToRgb.util';
+import { toPx } from '../../Utils/Transform/toPx.util';
 import { Select, selectDefaults } from './Select';
 import { RequiredSelectProps, SelectOption, SelectProps } from './Select.types';
 
